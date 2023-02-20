@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .all{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+        }
+        .left{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .right{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #emoji{
+            font-size: 50px;
+            cursor: pointer;
+        }
+        #circle{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: .2s;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="all">
+        <div class="left">
+            <h1 id="emoji">
+                &#128584;
+            </h1>
+        </div>
+        <div class="right">
+            <div id="circle">
+                Hover
+            </div>
+        </div>
+    </div>
+    <script>
+        const emoji = document.getElementById("emoji");
+        emoji.addEventListener("click",(e) => {
+            if(e.target.innerText == "🙈"){
+                e.target.innerHTML = "&#128585;"
+            }
+            else{
+                e.target.innerHTML = "&#128584;"
+            }
+        })
+
+        const circle = document.getElementById("circle");
+        circle.addEventListener("mouseenter",(e)=>{
+            e.target.style.transform = "scale(1.5)"
+        })
+        circle.addEventListener("mouseleave",(e)=>{
+            e.target.style.transform = "scale(1)"
+        })
+    </script>
+</body>
+</html>
